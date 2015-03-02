@@ -3,6 +3,9 @@ package com.felipeska.banking.ui.adapter;
 import java.util.Collections;
 import java.util.List;
 
+import butterknife.ButterKnife;
+import butterknife.InjectView;
+
 import com.felipeska.banking.R;
 import com.felipeska.banking.model.Client;
 
@@ -43,7 +46,7 @@ public final class ListClientAdapter extends BaseAdapter {
 	public long getItemId(int position) {
 		return position;
 	}
-	
+
 	public String getClientId(int position) {
 		return items.get(position).getIdentification();
 	}
@@ -67,14 +70,15 @@ public final class ListClientAdapter extends BaseAdapter {
 
 	public static class ViewHolder {
 		private final static String FORMAT_DISPLAY_DATA = "%s:  %s";
+		@InjectView(R.id.client_name)
 		TextView mTextViewName;
+		@InjectView(R.id.client_address)
 		TextView mTextViewAddress;
+		@InjectView(R.id.client_phone)
 		TextView mTextViewPhone;
 
 		private ViewHolder(View view) {
-			mTextViewName = (TextView) view.findViewById(R.id.client_name);
-			mTextViewAddress = (TextView) view.findViewById(R.id.client_address);
-			mTextViewPhone = (TextView) view.findViewById(R.id.client_phone);
+			ButterKnife.inject(this, view);
 		}
 
 		public void populate(Client client, Context context) {
@@ -85,12 +89,14 @@ public final class ListClientAdapter extends BaseAdapter {
 			mTextViewName.setText(String.format(FORMAT_DISPLAY_DATA,
 					context.getString(R.string.client), clientName));
 			mTextViewAddress.setText(String.format(FORMAT_DISPLAY_DATA,
-					context.getString(R.string.address), validateEmptyData(address,dummyData)));
+					context.getString(R.string.address),
+					validateEmptyData(address, dummyData)));
 			mTextViewPhone.setText(String.format(FORMAT_DISPLAY_DATA,
-					context.getString(R.string.phone), validateEmptyData(phone,dummyData)));
+					context.getString(R.string.phone),
+					validateEmptyData(phone, dummyData)));
 		}
 
-		private String validateEmptyData(String data,String dummyData){
+		private String validateEmptyData(String data, String dummyData) {
 			return TextUtils.isEmpty(data) ? dummyData : data;
 		}
 

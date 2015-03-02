@@ -10,24 +10,24 @@ public class InfoClientFragment$$ViewInjector<T extends com.felipeska.banking.ui
     View view;
     view = finder.findRequiredView(source, 2131296326, "field 'textTotalAccounts'");
     target.textTotalAccounts = finder.castView(view, 2131296326, "field 'textTotalAccounts'");
-    view = finder.findRequiredView(source, 2131296319, "field 'textViewClientName'");
-    target.textViewClientName = finder.castView(view, 2131296319, "field 'textViewClientName'");
-    view = finder.findRequiredView(source, 2131296322, "field 'textClientId'");
-    target.textClientId = finder.castView(view, 2131296322, "field 'textClientId'");
-    view = finder.findRequiredView(source, 2131296320, "field 'textClientAddress'");
-    target.textClientAddress = finder.castView(view, 2131296320, "field 'textClientAddress'");
     view = finder.findRequiredView(source, 2131296321, "field 'textClientPhone'");
     target.textClientPhone = finder.castView(view, 2131296321, "field 'textClientPhone'");
+    view = finder.findRequiredView(source, 2131296322, "field 'textClientId'");
+    target.textClientId = finder.castView(view, 2131296322, "field 'textClientId'");
+    view = finder.findRequiredView(source, 2131296319, "field 'textViewClientName'");
+    target.textViewClientName = finder.castView(view, 2131296319, "field 'textViewClientName'");
+    view = finder.findRequiredView(source, 2131296320, "field 'textClientAddress'");
+    target.textClientAddress = finder.castView(view, 2131296320, "field 'textClientAddress'");
     view = finder.findRequiredView(source, 2131296325, "field 'containerView'");
     target.containerView = view;
   }
 
   @Override public void reset(T target) {
     target.textTotalAccounts = null;
-    target.textViewClientName = null;
-    target.textClientId = null;
-    target.textClientAddress = null;
     target.textClientPhone = null;
+    target.textClientId = null;
+    target.textViewClientName = null;
+    target.textClientAddress = null;
     target.containerView = null;
   }
 }

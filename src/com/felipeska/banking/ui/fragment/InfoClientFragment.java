@@ -154,5 +154,4 @@ public class InfoClientFragment extends Fragment implements ClientView {
 	public void setClient(Client client) {
 		populateView(client);
 	}
-
 }
