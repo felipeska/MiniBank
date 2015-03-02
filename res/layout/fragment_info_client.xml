@@ -9,90 +9,104 @@
     tools:context=".ui.activity.MainActivity" >
 
     <LinearLayout
-        android:id="@+id/containerInfo"
+        android:id="@+id/rootContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical" >
 
         <LinearLayout
+            android:id="@+id/containerInfo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:paddingLeft="@dimen/general_padding"
-            android:paddingRight="@dimen/general_padding" >
+            android:orientation="vertical" >
 
-            <TextView
-                style="@style/information_client_add"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/personal_data"
-                android:textColor="@color/primary_text" />
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/general_padding"
+                android:paddingRight="@dimen/general_padding" >
+
+                <TextView
+                    style="@style/information_client_add"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/personal_data"
+                    android:textColor="@color/primary_text" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/general_background"
+                android:orientation="vertical"
+                android:padding="@dimen/general_padding" >
+
+                <TextView
+                    android:id="@+id/client_name"
+                    style="@style/information_client_add"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/client" />
+
+                <TextView
+                    android:id="@+id/client_id"
+                    style="@style/information_client_add"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/no_ident" />
+
+                <TextView
+                    android:id="@+id/client_address"
+                    style="@style/information_client_add"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/address_optional" />
+
+                <TextView
+                    android:id="@+id/client_phone"
+                    style="@style/information_client_add"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/phone_optional" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/general_padding"
+                android:paddingRight="@dimen/general_padding" >
+
+                <TextView
+                    style="@style/information_client_add"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/account_summary"
+                    android:textColor="@color/primary_text" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/general_background"
+                android:orientation="vertical"
+                android:padding="@dimen/general_padding" >
+
+                <TextView
+                    android:id="@+id/total_accounts"
+                    style="@style/information_client_add"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <ProgressBar
+            android:id="@+id/progress"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/general_background"
-            android:orientation="vertical"
-            android:padding="@dimen/general_padding" >
-
-            <TextView
-                android:id="@+id/client_name"
-                style="@style/information_client_add"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/client" />
-
-            <TextView
-                android:id="@+id/client_id"
-                style="@style/information_client_add"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/no_ident" />
-
-            <TextView
-                android:id="@+id/client_address"
-                style="@style/information_client_add"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/address_optional" />
-
-            <TextView
-                android:id="@+id/client_phone"
-                style="@style/information_client_add"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/phone_optional" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:paddingLeft="@dimen/general_padding"
-            android:paddingRight="@dimen/general_padding" >
-
-            <TextView
-                style="@style/information_client_add"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/account_summary"
-                android:textColor="@color/primary_text" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/general_background"
-            android:orientation="vertical"
-            android:padding="@dimen/general_padding" >
-
-            <TextView
-                android:id="@+id/total_accounts"
-                style="@style/information_client_add"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-        </LinearLayout>
+            android:layout_gravity="center"
+            android:visibility="gone" />
     </LinearLayout>
 
 </ScrollView>

@@ -21,6 +21,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 public class InfoClientFragment extends Fragment implements ClientView {
@@ -47,6 +48,9 @@ public class InfoClientFragment extends Fragment implements ClientView {
 
 	@InjectView(R.id.total_accounts)
 	TextView textTotalAccounts;
+
+	@InjectView(R.id.progress)
+	ProgressBar progressBar;
 
 	public static InfoClientFragment newInstance(String clientId) {
 		InfoClientFragment fragment = new InfoClientFragment();
@@ -139,6 +143,7 @@ public class InfoClientFragment extends Fragment implements ClientView {
 	@Override
 	public void showProgress() {
 		if (isAdded()) {
+			progressBar.setVisibility(View.VISIBLE);
 			containerView.setVisibility(View.INVISIBLE);
 		}
 	}
@@ -146,6 +151,7 @@ public class InfoClientFragment extends Fragment implements ClientView {
 	@Override
 	public void hideProgress() {
 		if (isAdded()) {
+			progressBar.setVisibility(View.INVISIBLE);
 			containerView.setVisibility(View.VISIBLE);
 		}
 	}
