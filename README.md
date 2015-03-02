@@ -29,15 +29,15 @@ Aplicación que simula el funcionamiento de un banco, en el cual se pueden crear
 
 * Entorno de desarrollo: Eclipse
 * Dependencias
-  * Android appcompat V7 - oficial [setup.](/appcompat/)
-  * Butter Knife. Official [page.] (/butterknife/)
-  * Persistence. Mvn [Repository.](/persistence/)
+  * Android appcompat V7 - oficial [setup.][appcompat]
+  * Butter Knife. Official [page.] [butterknife]
+  * Persistence. Mvn [Repository.][persistence]
 
 ==
 
 ## Demo
 
-* Disfrute de una demo y futuros avances [aquí.](/demo/)
+* Disfrute de una demo y futuros avances [aquí.][demo]
 
   
 [appcompat]: https://developer.android.com/tools/support-library/setup.html#
