@@ -1,0 +1,21 @@
+<resources>
+
+    <string name="app_name">Banking</string>
+
+    <!-- Client item -->
+    <string name="client">Nombre</string>
+    <string name="address">Dirección</string>
+    <string name="address_optional">Dirección (opcional)</string>
+    <string name="phone_optional">Teléfono (opcional)</string>
+    <string name="phone">Teléfono</string>
+    <string name="client_list_title">Lista De Clientes</string>
+    <string name="client_add_title">Agregar Cliente</string>
+    <string name="no_ident">No. de indentificación</string>
+    <string name="not_especified">Dato no especificado</string>
+    <string name="no_users">No existen clientes</string>
+    <string name="personal_data">Datos Personales</string>
+    <string name="client_info_title">Información Cliente</string>
+    <string name="account_summary">Información bancaria</string>
+    <string name="total_accounts">Número de cuentas: %s</string>
+
+</resources>

@@ -1,0 +1,98 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:ProgressWheel="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/general_padding"
+    android:paddingTop="@dimen/general_padding"
+    tools:context=".ui.activity.MainActivity" >
+
+    <LinearLayout
+        android:id="@+id/containerInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/general_padding"
+            android:paddingRight="@dimen/general_padding" >
+
+            <TextView
+                style="@style/information_client_add"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/personal_data"
+                android:textColor="@color/primary_text" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/general_background"
+            android:orientation="vertical"
+            android:padding="@dimen/general_padding" >
+
+            <TextView
+                android:id="@+id/client_name"
+                style="@style/information_client_add"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/client" />
+
+            <TextView
+                android:id="@+id/client_id"
+                style="@style/information_client_add"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/no_ident" />
+
+            <TextView
+                android:id="@+id/client_address"
+                style="@style/information_client_add"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/address_optional" />
+
+            <TextView
+                android:id="@+id/client_phone"
+                style="@style/information_client_add"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/phone_optional" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/general_padding"
+            android:paddingRight="@dimen/general_padding" >
+
+            <TextView
+                style="@style/information_client_add"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/account_summary"
+                android:textColor="@color/primary_text" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/general_background"
+            android:orientation="vertical"
+            android:padding="@dimen/general_padding" >
+
+            <TextView
+                android:id="@+id/total_accounts"
+                style="@style/information_client_add"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

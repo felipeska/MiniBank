@@ -1,0 +1,103 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:ProgressWheel="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/general_padding"
+    android:paddingTop="@dimen/general_padding"
+    tools:context=".ui.activity.MainActivity" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/general_padding"
+            android:paddingRight="@dimen/general_padding" >
+
+            <TextView
+                style="@style/information_client_add"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/personal_data"
+                android:textColor="@color/primary_text" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/general_background"
+            android:orientation="vertical"
+            android:padding="@dimen/general_padding" >
+
+            <EditText
+                android:id="@+id/client_name"
+                style="@style/information_client_add"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/client"
+                android:inputType="textCapWords|textPersonName|textAutoComplete" />
+
+            <EditText
+                android:id="@+id/client_id"
+                style="@style/information_client_add"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/no_ident"
+                android:inputType="number" />
+
+            <EditText
+                android:id="@+id/client_address"
+                style="@style/information_client_add"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/address_optional"
+                android:inputType="textCapWords|textPersonName|textAutoComplete" />
+
+            <EditText
+                android:id="@+id/client_phone"
+                style="@style/information_client_add"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/phone_optional"
+                android:inputType="phone" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="@dimen/min_padding" >
+
+            <Button
+                android:id="@+id/buttonExitAddClient"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/awesome_button"
+                android:text="@android:string/no"
+                android:textSize="@dimen/font_size_information_content" />
+
+            <View
+                android:layout_width="2dp"
+                android:layout_height="match_parent" />
+
+            <Button
+                android:id="@+id/buttonAddClient"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/awesome_button"
+                android:text="@android:string/ok"
+                android:textSize="@dimen/font_size_information_content" />
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>
