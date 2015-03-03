@@ -14,8 +14,8 @@ public class Account {
 	public Account() {
 	}
 
-	public Account(String number, String client_identificarion) {
-		this(number, client_identificarion, 0.0f);
+	public Account(String number, String client_identification) {
+		this(number, client_identification, 0.0f);
 	}
 
 	public Account(String number, String client_identification, float balance) {

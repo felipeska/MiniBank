@@ -7,7 +7,6 @@ import com.felipeska.banking.BankingApplication;
 
 public class DatabaseHelper {
 
-	public static final int DATABASE_VERSION = 1;
 	static volatile DatabaseHelper singleton = null;
 	private SqlAdapter adapter;
 

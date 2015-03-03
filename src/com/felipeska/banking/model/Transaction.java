@@ -6,11 +6,12 @@ public class Transaction {
 	private long date;
 	private float value;
 	private String account_number;
-	
+
 	public Transaction() {
 	}
-	
-	public Transaction(int transtactionType, long date, float value, String account_number){
+
+	public Transaction(int transtactionType, long date, float value,
+			String account_number) {
 		this.transactionType = transtactionType;
 		this.date = date;
 		this.value = value;
