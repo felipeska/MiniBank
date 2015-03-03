@@ -17,5 +17,8 @@
     <string name="client_info_title">Información Cliente</string>
     <string name="account_summary">Información bancaria</string>
     <string name="total_accounts">Número de cuentas: %s</string>
+    <string name="required_fields_add_client">Alguna información es necesaria, asegúrese de brindarla</string>
+    <string name="success_save_client">Nuevo cliente creado</string>
+    <string name="falied_save_client">Error al crear cliente. Verifique su información</string>
 
 </resources>

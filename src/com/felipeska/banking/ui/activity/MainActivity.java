@@ -6,6 +6,7 @@ import com.felipeska.banking.ui.fragment.InfoClientFragment;
 import com.felipeska.banking.ui.fragment.ListClientFragment;
 import com.felipeska.banking.ui.listener.SupportActionBarListener;
 
+import de.keyboardsurfer.android.widget.crouton.Style;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 
@@ -63,6 +64,12 @@ public class MainActivity extends BaseActivity implements
 
 	@Override
 	public void showClient(String clientId) {
-		loadFragment(InfoClientFragment.newInstance(clientId),InfoClientFragment.FRAGMENT_ID, true);
+		loadFragment(InfoClientFragment.newInstance(clientId),
+				InfoClientFragment.FRAGMENT_ID, true);
+	}
+
+	@Override
+	public void displayCroutonMessage(String message, Style style) {
+		showCrouton(message, style);
 	}
 }

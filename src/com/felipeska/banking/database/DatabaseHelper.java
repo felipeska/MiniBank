@@ -38,4 +38,8 @@ public class DatabaseHelper {
 		return adapter.findFirst(object);
 	}
 
+	public <T> Object store(T object) {
+		return adapter.store(object);
+	}
+
 }
