@@ -25,6 +25,29 @@ Aplicación que simula el funcionamiento de un banco, en el cual se pueden crear
 
 == 
 
+## Agregar cuentas
+
+* Un cliente puede tener varias cuentas en el sistema, si así lo desea
+![](https://raw.githubusercontent.com/felipeska/MiniBank/master/art/new_account_framed.png)
+
+==
+
+## Visualizar cuentas
+
+* Permite ver la totalidad de sus cuentas
+
+![](https://raw.githubusercontent.com/felipeska/MiniBank/master/art/accounts_framed.png)
+
+==
+
+## Realizar transacciones
+
+* Se permiten las transacciónes débito o crédito, dependiendo de su necesidad
+
+![](https://raw.githubusercontent.com/felipeska/MiniBank/master/art/transactions_framed.png)
+
+==
+
 # Datos técnicos
 
 * Entorno de desarrollo: Eclipse
@@ -43,5 +66,5 @@ Aplicación que simula el funcionamiento de un banco, en el cual se pueden crear
 [appcompat]: https://developer.android.com/tools/support-library/setup.html#
 [butterknife]: http://jakewharton.github.io/butterknife/
 [persistence]: http://mvnrepository.com/artifact/com.codeslap/persistence/0.9.24
-[demo]: https://www.dropbox.com/sh/h6y2qseyq3q3mjp/AADTwyMwBqNi5Da2_Onj4aIya?dl=0
+[demo]: https://www.dropbox.com/s/lo170tekyz6e95b/PBank%20v1.0.apk?dl=0
   
