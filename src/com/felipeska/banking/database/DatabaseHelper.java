@@ -29,6 +29,10 @@ public class DatabaseHelper {
 		return Persistence.getAdapter(BankingApplication.getAppContext());
 	}
 
+	public <T> List<T> findAll(T object) {
+		return adapter.findAll(object);
+	}
+
 	public <T> List<T> findAll(Class<T> modelClass) {
 		return adapter.findAll(modelClass);
 	}

@@ -30,7 +30,7 @@
                     style="@style/information_client_add"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/personal_data"
+                    android:text="@string/account_info"
                     android:textColor="@color/primary_text" />
             </LinearLayout>
 
@@ -41,38 +41,71 @@
                 android:orientation="vertical"
                 android:padding="@dimen/general_padding" >
 
-                <EditText
-                    android:id="@+id/client_name"
+                <TextView
+                    android:id="@+id/account_number"
                     style="@style/information_client_add"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/client"
-                    android:inputType="textCapWords|textPersonName|textAutoComplete" />
+                    android:hint="@string/account"
+                    android:textColor="@color/primary_color" />
+
+                <TextView
+                    android:id="@+id/account_balance"
+                    style="@style/information_client_add"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/balance"
+                    android:textColor="@color/inactive_color" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/general_padding"
+                android:paddingRight="@dimen/general_padding" >
+
+                <TextView
+                    style="@style/information_client_add"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/create_transaction"
+                    android:textColor="@color/primary_text" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/card_bg_play"
+                android:orientation="vertical"
+                android:padding="@dimen/general_padding" >
+
+                <RadioGroup
+                    android:id="@+id/radioGroupTransactionType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" >
+
+                    <RadioButton
+                        android:id="@+id/radioButtonDebit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="@string/debit" />
+
+                    <RadioButton
+                        android:id="@+id/radioButtonCredit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/credit" />
+                </RadioGroup>
 
                 <EditText
-                    android:id="@+id/client_id"
+                    android:id="@+id/value"
                     style="@style/information_client_add"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/no_ident"
+                    android:hint="@string/value_transaction"
                     android:inputType="number"
-                    android:maxLength="10" />
-
-                <EditText
-                    android:id="@+id/client_address"
-                    style="@style/information_client_add"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/address_optional"
-                    android:inputType="textCapWords|textPersonName|textAutoComplete" />
-
-                <EditText
-                    android:id="@+id/client_phone"
-                    style="@style/information_client_add"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/phone_optional"
-                    android:inputType="phone"
                     android:maxLength="10" />
             </LinearLayout>
 
@@ -83,25 +116,10 @@
                 android:padding="@dimen/min_padding" >
 
                 <Button
-                    android:id="@+id/buttonExit"
-                    style="?android:attr/borderlessButtonStyle"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@drawable/awesome_button"
-                    android:text="@android:string/no"
-                    android:textSize="@dimen/font_size_information_content" />
-
-                <View
-                    android:layout_width="2dp"
-                    android:layout_height="match_parent" />
-
-                <Button
                     android:id="@+id/buttonSuccess"
                     style="?android:attr/buttonStyleSmall"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
                     android:background="@drawable/awesome_button"
                     android:text="@android:string/ok"
                     android:textSize="@dimen/font_size_information_content" />

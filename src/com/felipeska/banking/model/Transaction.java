@@ -62,6 +62,10 @@ public class Transaction {
 		this.account_number = account_number;
 	}
 
+	public boolean havePositiveBalance(long balance, long credit) {
+		return (balance - credit > 0) ? true : false;
+	}
+
 	public enum TransactionType {
 		DEBIT(0), CREDIT(1);
 
@@ -79,7 +83,7 @@ public class Transaction {
 			return DEBIT;
 		}
 
-		private int getValue() {
+		public int getValue() {
 			return type;
 		}
 	}

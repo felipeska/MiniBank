@@ -7,7 +7,7 @@ import com.codeslap.persistence.PrimaryKey;
 public class Account {
 	@PrimaryKey()
 	private String number;
-	private float balance;
+	private long balance;
 	private int status = Status.ACTIVE.status;
 	private String client_identification;
 	private List<Transaction> transactions;
@@ -16,11 +16,11 @@ public class Account {
 	}
 
 	public Account(String number, String client_identification) {
-		this(number, client_identification, 0.0f, 1);
+		this(number, client_identification, 0l, 1);
 	}
 
 	public Account(String number, String client_identification,
-			float balanceDebit, int status) {
+			long balanceDebit, int status) {
 		this.number = number;
 		this.balance = balanceDebit;
 		this.client_identification = client_identification;
@@ -35,12 +35,12 @@ public class Account {
 		this.number = number;
 	}
 
-	public float getBalance() {
+	public long getBalance() {
 		return balance;
 	}
 
-	public void setBalance(float balanceDebit) {
-		this.balance = balanceDebit;
+	public void setBalance(long balance) {
+		this.balance = balance;
 	}
 
 	public String getClient_identification() {
@@ -84,7 +84,7 @@ public class Account {
 			return ACTIVE;
 		}
 
-		private int getValue() {
+		public int getValue() {
 			return this.status;
 		}
 	}

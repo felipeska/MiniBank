@@ -30,7 +30,7 @@
                     style="@style/information_client_add"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/personal_data"
+                    android:text="@string/account_info"
                     android:textColor="@color/primary_text" />
             </LinearLayout>
 
@@ -42,37 +42,21 @@
                 android:padding="@dimen/general_padding" >
 
                 <EditText
-                    android:id="@+id/client_name"
+                    android:id="@+id/account_number"
                     style="@style/information_client_add"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/client"
-                    android:inputType="textCapWords|textPersonName|textAutoComplete" />
-
-                <EditText
-                    android:id="@+id/client_id"
-                    style="@style/information_client_add"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/no_ident"
+                    android:hint="@string/account"
                     android:inputType="number"
                     android:maxLength="10" />
 
                 <EditText
-                    android:id="@+id/client_address"
+                    android:id="@+id/account_balance"
                     style="@style/information_client_add"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/address_optional"
-                    android:inputType="textCapWords|textPersonName|textAutoComplete" />
-
-                <EditText
-                    android:id="@+id/client_phone"
-                    style="@style/information_client_add"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/phone_optional"
-                    android:inputType="phone"
+                    android:hint="@string/balance"
+                    android:inputType="number"
                     android:maxLength="10" />
             </LinearLayout>
 

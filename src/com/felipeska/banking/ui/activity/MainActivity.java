@@ -1,11 +1,13 @@
 package com.felipeska.banking.ui.activity;
 
 import com.felipeska.banking.R;
+import com.felipeska.banking.ui.fragment.AddAccountFragment;
 import com.felipeska.banking.ui.fragment.AddClientFragment;
 import com.felipeska.banking.ui.fragment.EditClientFragment;
 import com.felipeska.banking.ui.fragment.InfoClientFragment;
 import com.felipeska.banking.ui.fragment.ListAccountFragment;
 import com.felipeska.banking.ui.fragment.ListClientFragment;
+import com.felipeska.banking.ui.fragment.TransactionFragment;
 import com.felipeska.banking.ui.listener.SupportActionBarListener;
 
 import de.keyboardsurfer.android.widget.crouton.Style;
@@ -14,7 +16,7 @@ import android.support.v4.app.Fragment;
 
 public class MainActivity extends BaseActivity implements
 		ListClientFragment.Listener, InfoClientFragment.Listener,
-		SupportActionBarListener {
+		ListAccountFragment.Listener, SupportActionBarListener {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -83,8 +85,21 @@ public class MainActivity extends BaseActivity implements
 	}
 
 	@Override
-	public void showAccounts(String clientId) {
-		loadFragment(ListAccountFragment.newInstance(clientId),
+	public void showAccounts(String clientId, String clientName) {
+		loadFragment(ListAccountFragment.newInstance(clientId, clientName),
 				ListAccountFragment.FRAGMENT_ID, true);
+	}
+
+	@Override
+	public void onNewAccountClicked(String name, String clientId) {
+		loadFragment(AddAccountFragment.newInstance(clientId, name),
+				AddAccountFragment.FRAGMENT_ID, true);
+	}
+
+	@Override
+	public void onItemAccountClicked(String accountNumber, long balance) {
+		loadFragment(TransactionFragment.newInstance(accountNumber, balance),
+				TransactionFragment.FRAGMENT_ID, true);
+
 	}
 }

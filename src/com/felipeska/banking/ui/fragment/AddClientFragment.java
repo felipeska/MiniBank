@@ -68,10 +68,12 @@ public class AddClientFragment extends BaseFragment implements ClientAddView {
 	}
 
 	private void validateInfoClient() {
-		final String name = mEditTextClientName.getText().toString();
-		final String identification = mEditTextClientId.getText().toString();
-		final String address = mEditTextClientAddress.getText().toString();
-		final String phone = mEditTextClientPhone.getText().toString();
+		final String name = mEditTextClientName.getText().toString().trim();
+		final String identification = mEditTextClientId.getText().toString()
+				.trim();
+		final String address = mEditTextClientAddress.getText().toString()
+				.trim();
+		final String phone = mEditTextClientPhone.getText().toString().trim();
 
 		if (!TextUtils.isEmpty(name) && !TextUtils.isEmpty(identification)) {
 			saveClient(name, identification, address, phone);

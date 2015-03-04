@@ -20,9 +20,9 @@ public class AccountListPresenterImpl implements AccountListPresenter,
 	}
 
 	@Override
-	public void onResume() {
+	public void findAccounts(String clientId) {
 		this.accountListView.showProgress();
-		this.findAccountsInteractor.findAccounts(this);
+		this.findAccountsInteractor.findAccounts(clientId, this);
 	}
 
 	@Override

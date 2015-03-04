@@ -31,7 +31,7 @@ public class InfoClientFragment extends BaseFragment implements ClientShowView,
 	public interface Listener {
 		void editClient(String clientId);
 
-		void showAccounts(String clientId);
+		void showAccounts(String clientId, String clientName);
 	}
 
 	public final static String FRAGMENT_ID = "ShowClient";
@@ -81,6 +81,11 @@ public class InfoClientFragment extends BaseFragment implements ClientShowView,
 	@Override
 	public void onAttach(Activity activity) {
 		super.onAttach(activity);
+		if (!(activity instanceof Listener)) {
+			throw new IllegalStateException(
+					"Activity must implement fragment Listener."
+							+ Listener.class.getSimpleName());
+		}
 		listener = (Listener) activity;
 	}
 
@@ -93,7 +98,7 @@ public class InfoClientFragment extends BaseFragment implements ClientShowView,
 	public boolean onOptionsItemSelected(MenuItem item) {
 		int id = item.getItemId();
 		if (id == R.id.action_add_account) {
-			listener.showAccounts(client.getIdentification());
+			listener.showAccounts(client.getIdentification(), client.getName());
 		} else if (id == R.id.action_delete_user) {
 			deleteUser();
 		} else if (id == R.id.action_edit_user) {

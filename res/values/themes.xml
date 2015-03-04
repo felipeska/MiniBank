@@ -26,5 +26,13 @@
         <item name="android:textColorSecondary">@color/title</item>
         <item name="android:background">@color/primary_color</item>
     </style>
+    
+    <style name="FancySpinner" parent="Widget.AppCompat.Light.Spinner.DropDown.ActionBar">
+         <item name="android:textColorPrimary">@color/primary_text</item>
+        <item name="android:background">?android:selectableItemBackground</item>
+        <item name="android:dropDownSelector">?android:selectableItemBackground</item>
+        <item name="android:divider">@null</item>
+        <item name="overlapAnchor">true</item>
+</style>
 
 </resources>

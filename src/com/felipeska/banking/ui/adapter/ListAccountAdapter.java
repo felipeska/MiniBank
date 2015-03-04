@@ -45,8 +45,12 @@ public class ListAccountAdapter extends BaseAdapter {
 		return position;
 	}
 
-	public String getClientId(int position) {
-		return items.get(position).getNumber();
+	public String getAccountNumber(int position) {
+		return getItem(position).getNumber();
+	}
+
+	public long getBalance(int position) {
+		return getItem(position).getBalance();
 	}
 
 	@Override

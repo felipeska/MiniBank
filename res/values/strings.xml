@@ -17,10 +17,12 @@
     <string name="no_users">No existen clientes</string>
     <string name="no_accounts">No existen cuentas</string>
     <string name="personal_data">Datos Personales</string>
+    <string name="account_info">Información de cuenta</string>
     <string name="account_summary">Información bancaria</string>
     <string name="total_accounts">Número de cuentas: %s</string>
     <string name="required_fields_add_client">Alguna información es necesaria, asegúrese de brindarla</string>
     <string name="success_save_client">Nuevo cliente creado</string>
+    <string name="success_save_account">Nueva cuenta creada</string>
     <string name="falied_save_client">Error al crear cliente. Verifique su información</string>
 
     <!-- menu -->
@@ -37,5 +39,18 @@
     <string name="acccount_list_title">Cuentas</string>
     <string name="account_number">Número de cuenta: %s</string>
     <string name="account_balance">Saldo $ %s</string>
+    <string name="account_new_title">Nueva cuenta</string>
+    <string name="account">Número de cuenta</string>
+    <string name="balance">Saldo</string>
+    <string name="failed_save_account">Error al crear cuenta. Verifique su información</string>
+    <string name="warning_save_account">Número de cuenta ya registrada, verifique su información</string>
+    <string name="account_transaction_title">Transacciones</string>
+    <string name="create_transaction">Realizar transacción</string>
+    <string name="value_transaction">Valor transacción</string>
+    <string name="debit">Débito</string>
+    <string name="credit">Crédito</string>
+    <string name="no_have_money">Saldos insuficientes :( </string>
+    <string name="success_transaction">Transacción Exitosa</string>
+    <string name="failed_transaction">Hubo un error al procesar su transacción</string>
 
 </resources>

@@ -9,12 +9,15 @@ import com.felipeska.banking.model.Account;
 public class FindAccountsInteractorImpl implements FindAccountsInteractor {
 
 	@Override
-	public void findAccounts(OnFinishedLoadAccountsListener listener) {
-		listener.onFinished(getAccounts());
+	public void findAccounts(String clientID,
+			OnFinishedLoadAccountsListener listener) {
+		listener.onFinished(getAccounts(clientID));
 	}
 
-	private List<Account> getAccounts() {
-		return DatabaseHelper.load().findAll(Account.class);
+	private List<Account> getAccounts(String ClientId) {
+		Account accountMatch = new Account();
+		accountMatch.setClient_identification(ClientId);
+		return DatabaseHelper.load().findAll(accountMatch);
 	}
 
 }

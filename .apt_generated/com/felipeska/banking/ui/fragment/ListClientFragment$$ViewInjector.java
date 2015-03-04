@@ -21,15 +21,15 @@ public class ListClientFragment$$ViewInjector<T extends com.felipeska.banking.ui
           target.listClicked(p2);
         }
       });
-    view = finder.findRequiredView(source, 2131296328, "field 'progressBar'");
-    target.progressBar = finder.castView(view, 2131296328, "field 'progressBar'");
     view = finder.findRequiredView(source, 2131296332, "field 'emptyView'");
     target.emptyView = view;
+    view = finder.findRequiredView(source, 2131296327, "field 'progressBar'");
+    target.progressBar = finder.castView(view, 2131296327, "field 'progressBar'");
   }
 
   @Override public void reset(T target) {
     target.listView = null;
-    target.progressBar = null;
     target.emptyView = null;
+    target.progressBar = null;
   }
 }
