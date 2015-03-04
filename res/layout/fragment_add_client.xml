@@ -37,7 +37,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/general_background"
+                android:background="@drawable/card_bg_play"
                 android:orientation="vertical"
                 android:padding="@dimen/general_padding" >
 
@@ -55,7 +55,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/no_ident"
-                    android:inputType="number" />
+                    android:inputType="number"
+                    android:maxLength="10" />
 
                 <EditText
                     android:id="@+id/client_address"
@@ -71,7 +72,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/phone_optional"
-                    android:inputType="phone" />
+                    android:inputType="phone"
+                    android:maxLength="10" />
             </LinearLayout>
 
             <LinearLayout
@@ -81,7 +83,7 @@
                 android:padding="@dimen/min_padding" >
 
                 <Button
-                    android:id="@+id/buttonExitAddClient"
+                    android:id="@+id/buttonExit"
                     style="?android:attr/borderlessButtonStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -95,7 +97,7 @@
                     android:layout_height="match_parent" />
 
                 <Button
-                    android:id="@+id/buttonAddClient"
+                    android:id="@+id/buttonSuccess"
                     style="?android:attr/buttonStyleSmall"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

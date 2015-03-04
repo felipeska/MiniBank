@@ -1,6 +1,6 @@
 <resources>
 
-    <string name="app_name">Banking</string>
+    <string name="app_name">PBank</string>
 
     <!-- Client item -->
     <string name="client">Nombre</string>
@@ -8,17 +8,34 @@
     <string name="address_optional">Dirección (opcional)</string>
     <string name="phone_optional">Teléfono (opcional)</string>
     <string name="phone">Teléfono</string>
-    <string name="client_list_title">Lista De Clientes</string>
-    <string name="client_add_title">Agregar Cliente</string>
+    <string name="client_list_title">Clientes</string>
+    <string name="client_add_title">Nuevo Cliente</string>
+    <string name="client_edit_title">Actualizar info Cliente</string>
+    <string name="client_info_title">Información Cliente</string>
     <string name="no_ident">No. de indentificación</string>
     <string name="not_especified">Dato no especificado</string>
     <string name="no_users">No existen clientes</string>
+    <string name="no_accounts">No existen cuentas</string>
     <string name="personal_data">Datos Personales</string>
-    <string name="client_info_title">Información Cliente</string>
     <string name="account_summary">Información bancaria</string>
     <string name="total_accounts">Número de cuentas: %s</string>
     <string name="required_fields_add_client">Alguna información es necesaria, asegúrese de brindarla</string>
     <string name="success_save_client">Nuevo cliente creado</string>
     <string name="falied_save_client">Error al crear cliente. Verifique su información</string>
+
+    <!-- menu -->
+    <string name="item_edit">Editar</string>
+    <string name="item_delete">Eliminar</string>
+    <string name="item_accounts">Cuentas</string>
+    <string name="warning_delete_client">Este cliente tiene cuentas activas, no se puede eliminar</string>
+    <string name="warning_add_client">Identificación ya registrada, verifique su información</string>
+    <string name="unknown_error">Error desconocido</string>
+    <string name="success_delete_client">Cliente eliminado</string>
+    <string name="failed_delete_client">Error al eliminar cliente. Intente más tarde</string>
+    <string name="success_edit_client">Información de el cliente actualizada</string>
+    <string name="failed_edit_client">Error al actualizar la información del cliente. Intente más tarde</string>
+    <string name="acccount_list_title">Cuentas</string>
+    <string name="account_number">Número de cuenta: %s</string>
+    <string name="account_balance">Saldo $ %s</string>
 
 </resources>

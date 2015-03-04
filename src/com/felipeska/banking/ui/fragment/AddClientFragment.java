@@ -5,10 +5,11 @@ import butterknife.OnClick;
 
 import com.felipeska.banking.R;
 import com.felipeska.banking.error.Error;
+import com.felipeska.banking.error.ErrorMessage;
 import com.felipeska.banking.presenter.ClientAddPresenter;
 import com.felipeska.banking.presenter.ClientAddPresenterImpl;
 import com.felipeska.banking.view.ClientAddView;
-import com.felipeska.widget.CroutonStyle;
+import com.felipeska.banking.widget.CroutonStyle;
 
 import de.keyboardsurfer.android.widget.crouton.Style;
 import android.os.Bundle;
@@ -35,6 +36,9 @@ public class AddClientFragment extends BaseFragment implements ClientAddView {
 	@InjectView(R.id.progress)
 	ProgressBar progressBar;
 
+	@InjectView(R.id.rootContainer)
+	View containerView;
+
 	private ClientAddPresenter clientAddPresenter;
 
 	public final static String FRAGMENT_ID = "AddClient";
@@ -47,14 +51,14 @@ public class AddClientFragment extends BaseFragment implements ClientAddView {
 	public AddClientFragment() {
 	}
 
-	@OnClick(R.id.buttonAddClient)
+	@OnClick(R.id.buttonSuccess)
 	void addClient() {
 		validateInfoClient();
 	}
 
-	@OnClick(R.id.buttonExitAddClient)
+	@OnClick(R.id.buttonExit)
 	void cancelAddClient() {
-		actionBarListener.displayClicked();
+		actionBarListener.navigateToHome();
 	}
 
 	@Override
@@ -87,6 +91,7 @@ public class AddClientFragment extends BaseFragment implements ClientAddView {
 	@Override
 	public void showProgress() {
 		if (isAdded()) {
+			containerView.setVisibility(View.INVISIBLE);
 			progressBar.setVisibility(View.VISIBLE);
 		}
 	}
@@ -94,6 +99,7 @@ public class AddClientFragment extends BaseFragment implements ClientAddView {
 	@Override
 	public void hideProgress() {
 		if (isAdded()) {
+			containerView.setVisibility(View.VISIBLE);
 			progressBar.setVisibility(View.INVISIBLE);
 		}
 	}
@@ -103,14 +109,13 @@ public class AddClientFragment extends BaseFragment implements ClientAddView {
 		actionBarListener.displayCroutonMessage(
 				getResources().getString(R.string.success_save_client),
 				CroutonStyle.CONFIRM);
-		actionBarListener.displayClicked();
+		actionBarListener.navigateToHome();
 	}
 
 	@Override
 	public void saveClientError(Error saveError) {
 		actionBarListener.displayCroutonMessage(
-				getResources().getString(R.string.falied_save_client),
-				Style.ALERT);
+				ErrorMessage.obtain(saveError, getResources()), Style.ALERT);
 	}
 
 	@Override

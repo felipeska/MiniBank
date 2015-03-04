@@ -12,6 +12,12 @@
         <item name="colorAccent">@color/accent_color</item>
         <item name="windowActionBar">false</item>
         <item name="colorControlNormal">@color/divider_color</item>
+        <item name="actionBarPopupTheme">@style/popupNew</item>
+    </style>
+
+    <style name="popupNew" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:textColor">@color/primary_text</item>
+        <item name="android:background">#EEEEEE</item>
     </style>
 
     <style name="FancyToolbar" parent="Theme.AppCompat.NoActionBar">

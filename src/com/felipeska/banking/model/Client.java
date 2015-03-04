@@ -20,7 +20,8 @@ public class Client {
 		this(name, id, null, null);
 	}
 
-	public Client(String name, String identification, String address, String phone) {
+	public Client(String name, String identification, String address,
+			String phone) {
 		this.name = name;
 		this.identification = identification;
 		this.address = address;
@@ -66,9 +67,12 @@ public class Client {
 	public void setAccounts(List<Account> accounts) {
 		this.accounts = accounts;
 	}
-	
-	public int totalAccounts(){
+
+	public int totalAccounts() {
 		return this.accounts.size();
 	}
 
+	public boolean hasAccounts() {
+		return (this.accounts.size() > 0 ? true : false);
+	}
 }

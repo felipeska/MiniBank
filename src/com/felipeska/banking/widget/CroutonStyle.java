@@ -1,4 +1,4 @@
-package com.felipeska.widget;
+package com.felipeska.banking.widget;
 
 import de.keyboardsurfer.android.widget.crouton.Style;
 

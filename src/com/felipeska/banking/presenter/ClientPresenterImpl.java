@@ -1,18 +1,18 @@
 package com.felipeska.banking.presenter;
 
 import com.felipeska.banking.interactor.FindClientInteractorImpl;
-import com.felipeska.banking.interactor.FindClientIteractor;
+import com.felipeska.banking.interactor.FindClientInteractor;
 import com.felipeska.banking.listener.OnFinishedLoadClientListener;
 import com.felipeska.banking.model.Client;
-import com.felipeska.banking.view.ClientView;
+import com.felipeska.banking.view.ClientShowView;
 
 public class ClientPresenterImpl implements ClientPresenter,
 		OnFinishedLoadClientListener {
 
-	private ClientView clientView;
-	private FindClientIteractor findClientIteractor;
+	private ClientShowView clientView;
+	private FindClientInteractor findClientIteractor;
 
-	public ClientPresenterImpl(ClientView clientView) {
+	public ClientPresenterImpl(ClientShowView clientView) {
 		this.clientView = clientView;
 		this.findClientIteractor = new FindClientInteractorImpl();
 	}

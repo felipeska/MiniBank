@@ -2,7 +2,7 @@ package com.felipeska.banking.view;
 
 import com.felipeska.banking.model.Client;
 
-public interface ClientView {
+public interface ClientShowView {
 
 	public void showProgress();
 

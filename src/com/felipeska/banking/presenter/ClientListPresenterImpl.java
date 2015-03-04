@@ -2,8 +2,8 @@ package com.felipeska.banking.presenter;
 
 import java.util.List;
 
-import com.felipeska.banking.interactor.FindClientsIteractor;
-import com.felipeska.banking.interactor.FindClientsIteractorImpl;
+import com.felipeska.banking.interactor.FindClientsInteractor;
+import com.felipeska.banking.interactor.FindClientsInteractorImpl;
 import com.felipeska.banking.listener.OnFinishedLoadClientsListener;
 import com.felipeska.banking.model.Client;
 import com.felipeska.banking.view.ClientListView;
@@ -12,11 +12,11 @@ public class ClientListPresenterImpl implements ClientListPresenter,
 		OnFinishedLoadClientsListener {
 
 	private ClientListView clientListView;
-	private FindClientsIteractor findClientsIteractor;
+	private FindClientsInteractor findClientsIteractor;
 
 	public ClientListPresenterImpl(ClientListView clientListView) {
 		this.clientListView = clientListView;
-		findClientsIteractor = new FindClientsIteractorImpl();
+		findClientsIteractor = new FindClientsInteractorImpl();
 	}
 
 	@Override
@@ -29,10 +29,5 @@ public class ClientListPresenterImpl implements ClientListPresenter,
 	public void onResume() {
 		clientListView.showProgress();
 		findClientsIteractor.findClients(this);
-	}
-
-	@Override
-	public void onItemClicked(String clientId) {
-		clientListView.clientSelected(clientId);
 	}
 }

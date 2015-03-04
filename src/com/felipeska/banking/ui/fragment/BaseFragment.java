@@ -26,7 +26,8 @@ public abstract class BaseFragment extends Fragment {
 	public void onAttach(Activity activity) {
 		if (!(activity instanceof SupportActionBarListener)) {
 			throw new IllegalStateException(
-					"Activity must implement fragment Listener.");
+					"Activity must implement fragment Listener."
+							+ SupportActionBarListener.class.getSimpleName());
 		}
 		super.onAttach(activity);
 		setHasOptionsMenu(true);
@@ -39,7 +40,7 @@ public abstract class BaseFragment extends Fragment {
 	public boolean onOptionsItemSelected(MenuItem item) {
 		int id = item.getItemId();
 		if (id == android.R.id.home) {
-			actionBarListener.displayClicked();
+			actionBarListener.navigateToHome();
 			return true;
 		}
 		return super.onOptionsItemSelected(item);

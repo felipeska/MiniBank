@@ -8,6 +8,7 @@ import com.felipeska.banking.presenter.ClientListPresenter;
 import com.felipeska.banking.presenter.ClientListPresenterImpl;
 import com.felipeska.banking.ui.adapter.ListClientAdapter;
 import com.felipeska.banking.view.ClientListView;
+
 import butterknife.InjectView;
 import butterknife.OnItemClick;
 import android.app.Activity;
@@ -43,7 +44,7 @@ public class ListClientFragment extends BaseFragment implements ClientListView {
 
 	@OnItemClick(android.R.id.list)
 	void listClicked(int listId) {
-		presenter.onItemClicked(adapter.getClientId(listId));
+		clientListener.showClient(adapter.getClientId(listId));
 	}
 
 	public static ListClientFragment newInstance() {
@@ -57,6 +58,11 @@ public class ListClientFragment extends BaseFragment implements ClientListView {
 	@Override
 	public void onAttach(Activity activity) {
 		super.onAttach(activity);
+		if (!(activity instanceof Listener)) {
+			throw new IllegalStateException(
+					"Activity must implement fragment Listener."
+							+ Listener.class.getSimpleName());
+		}
 		clientListener = (Listener) activity;
 		adapter = new ListClientAdapter(activity);
 	}
@@ -112,11 +118,6 @@ public class ListClientFragment extends BaseFragment implements ClientListView {
 	@Override
 	public void setClients(List<Client> clients) {
 		adapter.call(clients);
-	}
-
-	@Override
-	public void clientSelected(String clientId) {
-		clientListener.showClient(clientId);
 	}
 
 	@Override

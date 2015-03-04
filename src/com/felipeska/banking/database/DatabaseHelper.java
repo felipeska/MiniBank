@@ -41,4 +41,12 @@ public class DatabaseHelper {
 		return adapter.store(object);
 	}
 
+	public <T> Object delete(T object) {
+		return adapter.delete(object);
+	}
+
+	public <T> Object update(T older, T newer) {
+		return adapter.update(older, newer);
+	}
+
 }

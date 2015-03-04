@@ -8,6 +8,7 @@ public class Account {
 	@PrimaryKey()
 	private String number;
 	private float balance;
+	private int status = Status.ACTIVE.status;
 	private String client_identification;
 	private List<Transaction> transactions;
 
@@ -15,13 +16,15 @@ public class Account {
 	}
 
 	public Account(String number, String client_identification) {
-		this(number, client_identification, 0.0f);
+		this(number, client_identification, 0.0f, 1);
 	}
 
-	public Account(String number, String client_identification, float balance) {
+	public Account(String number, String client_identification,
+			float balanceDebit, int status) {
 		this.number = number;
-		this.balance = balance;
+		this.balance = balanceDebit;
 		this.client_identification = client_identification;
+		this.status = status;
 	}
 
 	public String getNumber() {
@@ -36,8 +39,8 @@ public class Account {
 		return balance;
 	}
 
-	public void setBalance(long balance) {
-		this.balance = balance;
+	public void setBalance(float balanceDebit) {
+		this.balance = balanceDebit;
 	}
 
 	public String getClient_identification() {
@@ -56,7 +59,33 @@ public class Account {
 		this.transactions = transactions;
 	}
 
-	public void setBalance(float balance) {
-		this.balance = balance;
+	public int getStatus() {
+		return status;
+	}
+
+	public void setStatus(int status) {
+		this.status = status;
+	}
+
+	public enum Status {
+		ACTIVE(1), INACTIVE(0);
+
+		private final int status;
+
+		private Status(int status) {
+			this.status = status;
+		}
+
+		public static Status getStatus(int status) {
+			for (Status t : Status.values()) {
+				if (status == t.getValue())
+					return t;
+			}
+			return ACTIVE;
+		}
+
+		private int getValue() {
+			return this.status;
+		}
 	}
 }

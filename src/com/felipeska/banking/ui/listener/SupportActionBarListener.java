@@ -5,7 +5,7 @@ import de.keyboardsurfer.android.widget.crouton.Style;
 public interface SupportActionBarListener {
 	public void displayHomeAsUpEnabled(boolean display);
 
-	public void displayClicked();
+	public void navigateToHome();
 
 	public void displayCroutonMessage(String message, Style style);
 }

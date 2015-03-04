@@ -2,7 +2,9 @@ package com.felipeska.banking.ui.activity;
 
 import com.felipeska.banking.R;
 import com.felipeska.banking.ui.fragment.AddClientFragment;
+import com.felipeska.banking.ui.fragment.EditClientFragment;
 import com.felipeska.banking.ui.fragment.InfoClientFragment;
+import com.felipeska.banking.ui.fragment.ListAccountFragment;
 import com.felipeska.banking.ui.fragment.ListClientFragment;
 import com.felipeska.banking.ui.listener.SupportActionBarListener;
 
@@ -11,7 +13,8 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 
 public class MainActivity extends BaseActivity implements
-		ListClientFragment.Listener, SupportActionBarListener {
+		ListClientFragment.Listener, InfoClientFragment.Listener,
+		SupportActionBarListener {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -58,7 +61,7 @@ public class MainActivity extends BaseActivity implements
 	}
 
 	@Override
-	public void displayClicked() {
+	public void navigateToHome() {
 		getSupportFragmentManager().popBackStack();
 	}
 
@@ -71,5 +74,17 @@ public class MainActivity extends BaseActivity implements
 	@Override
 	public void displayCroutonMessage(String message, Style style) {
 		showCrouton(message, style);
+	}
+
+	@Override
+	public void editClient(String clientId) {
+		loadFragment(EditClientFragment.newInstance(clientId),
+				EditClientFragment.FRAGMENT_ID, true);
+	}
+
+	@Override
+	public void showAccounts(String clientId) {
+		loadFragment(ListAccountFragment.newInstance(clientId),
+				ListAccountFragment.FRAGMENT_ID, true);
 	}
 }

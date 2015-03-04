@@ -2,7 +2,7 @@ package com.felipeska.banking.model;
 
 public class Transaction {
 	private long id;
-	private int transactionType;
+	private int transactionType = TransactionType.DEBIT.type;
 	private long date;
 	private float value;
 	private String account_number;
@@ -28,6 +28,10 @@ public class Transaction {
 
 	public int getTransactionType() {
 		return transactionType;
+	}
+
+	public TransactionType transactionType() {
+		return TransactionType.getTransactionType(transactionType);
 	}
 
 	public void setTransactionType(int transactionType) {
@@ -56,6 +60,28 @@ public class Transaction {
 
 	public void setAccount_number(String account_number) {
 		this.account_number = account_number;
+	}
+
+	public enum TransactionType {
+		DEBIT(0), CREDIT(1);
+
+		private final int type;
+
+		TransactionType(int type) {
+			this.type = type;
+		}
+
+		public static TransactionType getTransactionType(int type) {
+			for (TransactionType t : TransactionType.values()) {
+				if (type == t.getValue())
+					return t;
+			}
+			return DEBIT;
+		}
+
+		private int getValue() {
+			return type;
+		}
 	}
 
 }

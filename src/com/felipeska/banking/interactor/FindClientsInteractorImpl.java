@@ -6,7 +6,7 @@ import com.felipeska.banking.database.DatabaseHelper;
 import com.felipeska.banking.listener.OnFinishedLoadClientsListener;
 import com.felipeska.banking.model.Client;
 
-public class FindClientsIteractorImpl implements FindClientsIteractor {
+public class FindClientsInteractorImpl implements FindClientsInteractor {
 
 	@Override
 	public void findClients(final OnFinishedLoadClientsListener listener) {

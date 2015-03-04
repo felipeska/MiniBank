@@ -38,7 +38,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/general_background"
+                android:background="@drawable/card_bg_play"
                 android:orientation="vertical"
                 android:padding="@dimen/general_padding" >
 
@@ -89,7 +89,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/general_background"
+                android:background="@drawable/card_bg_play"
                 android:orientation="vertical"
                 android:padding="@dimen/general_padding" >
 

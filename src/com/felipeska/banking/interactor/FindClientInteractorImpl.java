@@ -4,7 +4,7 @@ import com.felipeska.banking.database.DatabaseHelper;
 import com.felipeska.banking.listener.OnFinishedLoadClientListener;
 import com.felipeska.banking.model.Client;
 
-public class FindClientInteractorImpl implements FindClientIteractor {
+public class FindClientInteractorImpl implements FindClientInteractor {
 
 	@Override
 	public void findClient(String clientId,

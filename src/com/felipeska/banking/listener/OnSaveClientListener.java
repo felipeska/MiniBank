@@ -4,7 +4,7 @@ import com.felipeska.banking.error.Error;
 
 public interface OnSaveClientListener {
 
-	public void onSuccess();
+	public void onSuccessSave();
 
-	public void onFailed(Error error);
+	public void onFailedSave(Error error);
 }
