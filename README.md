@@ -48,6 +48,14 @@ Aplicación que simula el funcionamiento de un banco, en el cual se pueden crear
 
 ==
 
+## Conservar historial de movimientos
+
+* Puede visualizar las transacciones que han ocurrido en su cuentas
+
+![](https://raw.githubusercontent.com/felipeska/MiniBank/master/art/history_framed.png)
+
+==
+
 # Datos técnicos
 
 * Entorno de desarrollo: Eclipse
