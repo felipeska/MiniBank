@@ -7,7 +7,6 @@ import java.util.List;
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -111,7 +110,6 @@ public class ListAccountFragment extends BaseFragment implements
 						new MenuItem.OnMenuItemClickListener() {
 							@Override
 							public boolean onMenuItemClick(MenuItem item) {
-								Log.d("DAFT_PUNK", "fASTER");
 								listener.onNewAccountClicked(getClientName(),
 										getClientId());
 								return true;

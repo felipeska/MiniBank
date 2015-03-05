@@ -16,6 +16,7 @@
     <string name="not_especified">Dato no especificado</string>
     <string name="no_users">No existen clientes</string>
     <string name="no_accounts">No existen cuentas</string>
+    <string name="no_transactions">No existen transacciones registradas</string>
     <string name="personal_data">Datos Personales</string>
     <string name="account_info">Información de cuenta</string>
     <string name="account_summary">Información bancaria</string>
@@ -52,5 +53,9 @@
     <string name="no_have_money">Saldos insuficientes :( </string>
     <string name="success_transaction">Transacción Exitosa</string>
     <string name="failed_transaction">Hubo un error al procesar su transacción</string>
+    <string name="account_history">Historíco cuenta No. %s</string>
+    <string name="transaction_date">Fecha de transacción: %s</string>
+    <string name="transacion_value">Valor: %s</string>
+    <string name="transaction_type">Tipo: %s</string>
 
 </resources>

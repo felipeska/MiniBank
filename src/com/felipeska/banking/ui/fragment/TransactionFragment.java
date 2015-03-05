@@ -1,7 +1,12 @@
 package com.felipeska.banking.ui.fragment;
 
+import static android.view.MenuItem.SHOW_AS_ACTION_ALWAYS;
+import android.app.Activity;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ProgressBar;
@@ -24,8 +29,13 @@ import de.keyboardsurfer.android.widget.crouton.Style;
 public class TransactionFragment extends BaseFragment implements
 		TransactionView {
 
+	public interface Listener {
+		public void showHistoryCliked(String accountNumber);
+	}
+
 	public final static String FRAGMENT_ID = "AccountTransaction";
 	private TransactionPresenter transactionPresenter;
+	private Listener listener;
 
 	@InjectView(R.id.progress)
 	ProgressBar progressBar;
@@ -77,6 +87,17 @@ public class TransactionFragment extends BaseFragment implements
 	}
 
 	@Override
+	public void onAttach(Activity activity) {
+		super.onAttach(activity);
+		if (!(activity instanceof Listener)) {
+			throw new IllegalStateException(
+					"Activity must implement fragment Listener."
+							+ Listener.class.getSimpleName());
+		}
+		listener = (Listener) activity;
+	}
+
+	@Override
 	public void onViewCreated(View view, Bundle savedInstanceState) {
 		super.onViewCreated(view, savedInstanceState);
 		this.transactionPresenter = new TransactionPresenterImpl(this);
@@ -103,6 +124,22 @@ public class TransactionFragment extends BaseFragment implements
 	@Override
 	protected boolean actionBarEnabled() {
 		return true;
+	}
+
+	@Override
+	public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+		super.onCreateOptionsMenu(menu, inflater);
+		menu.add(R.string.acccount_list_title)
+				.setShowAsActionFlags(SHOW_AS_ACTION_ALWAYS)
+				.setIcon(R.drawable.ic_action_history)
+				.setOnMenuItemClickListener(
+						new MenuItem.OnMenuItemClickListener() {
+							@Override
+							public boolean onMenuItemClick(MenuItem item) {
+								listener.showHistoryCliked(getAccountNumber());
+								return true;
+							}
+						});
 	}
 
 	private void validateTransactionData() {
