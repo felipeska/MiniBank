@@ -4,6 +4,7 @@ import com.felipeska.banking.R;
 import com.felipeska.banking.ui.fragment.AddAccountFragment;
 import com.felipeska.banking.ui.fragment.AddClientFragment;
 import com.felipeska.banking.ui.fragment.EditClientFragment;
+import com.felipeska.banking.ui.fragment.HistoryTransactionsFragment;
 import com.felipeska.banking.ui.fragment.InfoClientFragment;
 import com.felipeska.banking.ui.fragment.ListAccountFragment;
 import com.felipeska.banking.ui.fragment.ListClientFragment;
@@ -16,7 +17,8 @@ import android.support.v4.app.Fragment;
 
 public class MainActivity extends BaseActivity implements
 		ListClientFragment.Listener, InfoClientFragment.Listener,
-		ListAccountFragment.Listener, SupportActionBarListener {
+		ListAccountFragment.Listener, SupportActionBarListener,
+		TransactionFragment.Listener {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -101,5 +103,11 @@ public class MainActivity extends BaseActivity implements
 		loadFragment(TransactionFragment.newInstance(accountNumber, balance),
 				TransactionFragment.FRAGMENT_ID, true);
 
+	}
+
+	@Override
+	public void showHistoryCliked(String accountNumber) {
+		loadFragment(HistoryTransactionsFragment.newInstance(accountNumber),
+				HistoryTransactionsFragment.ID, true);
 	}
 }

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/general_padding"
+    android:weightSum="1" >
+
+    <TextView
+        android:id="@+id/transacion_date"
+        style="@style/information_client_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Fecha: 10-16-1989 10:00 A.M"
+        android:textColor="@color/primary_text"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/transaction_value"
+        style="@style/information_client_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="Valor: $ 150.000" />
+
+    <TextView
+        android:id="@+id/transaction_type"
+        style="@style/information_client_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="Tipo de transacción: Crédito" />
+
+</LinearLayout>

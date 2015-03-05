@@ -29,7 +29,6 @@ public class TransactionPresenterImpl implements TransactionPresenter,
 	public void onSuccessTransaction() {
 		transactionView.hideProgress();
 		transactionView.transactionSuccess();
-
 	}
 
 	@Override
